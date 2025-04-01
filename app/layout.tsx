@@ -3,7 +3,9 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Layout from "@/components/Layout";
 import LoginModal from "@/components/modals/LoginModal";
-import RegisterModal from "@/components/modals/RegisterModal copy";
+import RegisterModal from "@/components/modals/RegisterModal";
+import { Toaster } from "react-hot-toast";
+import Providers from "./providers"; // Import the new Providers component
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,14 +29,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <RegisterModal/>
-        <LoginModal/>
-        <Layout>
-          {children}
-        </Layout>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <Providers> {/* Wrap everything in Providers */}
+          <Toaster />
+          <RegisterModal />
+          <LoginModal />
+          <Layout>
+            {children}
+          </Layout>
+        </Providers>
       </body>
     </html>
   );
