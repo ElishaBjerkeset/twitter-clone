@@ -1,7 +1,7 @@
 "use client"
 
 import useUsers from "@/hooks/useUsers";
-import Avatar from "../avatar";
+import Avatar from "../Avatar";
 
 const FollowBar = () => {
     const {data: users = []} = useUsers();
