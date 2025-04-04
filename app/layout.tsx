@@ -6,6 +6,7 @@ import LoginModal from "@/components/modals/LoginModal";
 import RegisterModal from "@/components/modals/RegisterModal";
 import { Toaster } from "react-hot-toast";
 import Providers from "./providers"; // Import the new Providers component
+import EditModal from "@/components/modals/EditModal";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,6 +33,7 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Providers> {/* Wrap everything in Providers */}
           <Toaster />
+          <EditModal/>
           <RegisterModal />
           <LoginModal />
           <Layout>
