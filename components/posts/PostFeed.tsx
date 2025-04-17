@@ -1,6 +1,6 @@
 "use client";
 
-import usePosts from "@/hooks/usePost";
+import usePosts from "@/hooks/usePosts";
 import PostItem from "./PostItem";
 
 interface PostFeedProps {

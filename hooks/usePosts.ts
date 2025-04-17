@@ -1,10 +1,10 @@
-"use client";
+"use client";//Don't need this?
 
 import useSWR from "swr";
 import fetcher from "@/libs/fetcher";
 
-const usePost = (postId: string) => {
-    const url = postId ? `/api/posts/${postId}` : null;
+const usePosts = (userId?: string) => {
+    const url = userId ? `/api/posts?userId=${userId}` : "/api/posts";
     const {data, error, isLoading, mutate} = useSWR(url, fetcher);
 
     return {
@@ -15,4 +15,4 @@ const usePost = (postId: string) => {
     }
 };
 
-export default usePost;
+export default usePosts;
